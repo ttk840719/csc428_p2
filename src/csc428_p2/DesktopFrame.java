@@ -29,9 +29,9 @@ public class DesktopFrame extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         PPT = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        noteButton = new javax.swing.JButton();
+        paperButton = new javax.swing.JButton();
+        folderButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -45,32 +45,32 @@ public class DesktopFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("NotePad");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        noteButton.setText("NotePad");
+        noteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                noteButtonActionPerformed(evt);
             }
         });
 
-        jButton4.setText("paper1");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        paperButton.setText("paper1");
+        paperButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                paperButtonActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Folder for Papers\n");
-        jButton5.setActionCommand("Folder");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        folderButton.setText("Folder for Papers\n");
+        folderButton.setActionCommand("Folder");
+        folderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                folderButtonActionPerformed(evt);
             }
         });
 
         jDesktopPane1.setLayer(PPT, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jButton3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jButton4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jButton5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(noteButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(paperButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(folderButton, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -79,10 +79,10 @@ public class DesktopFrame extends javax.swing.JFrame {
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                    .addComponent(paperButton, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                    .addComponent(noteButton, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
                     .addComponent(PPT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                    .addComponent(folderButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
@@ -91,11 +91,11 @@ public class DesktopFrame extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addComponent(PPT, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(noteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(paperButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(folderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(328, Short.MAX_VALUE))
         );
 
@@ -145,26 +145,26 @@ public class DesktopFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void noteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noteButtonActionPerformed
         // TODO add your handling code here:
         JInternalNote note = new JInternalNote();
         jDesktopPane1.add(note);
         note.show();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_noteButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void paperButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paperButtonActionPerformed
         // TODO add your handling code here:
         JInternalPaper paper = new JInternalPaper();
         jDesktopPane1.add(paper);
         paper.show();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_paperButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void folderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folderButtonActionPerformed
         // TODO add your handling code here:
         JInternalPaper folder = new JInternalPaper();
         jDesktopPane1.add(folder);
         folder.show();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_folderButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,11 +203,11 @@ public class DesktopFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton PPT;
+    private javax.swing.JButton folderButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JButton noteButton;
+    private javax.swing.JButton paperButton;
     // End of variables declaration//GEN-END:variables
 }
