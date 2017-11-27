@@ -71,6 +71,9 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
         <Component class="javax.swing.JTextPane" name="jTextPane1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="HCI Project 1: The Dangers of Happiness&#xa;This is a paper detailing the dangers of happiness. Happiness bad. Let&apos;s get rid of it.&#xa;Sources:&#xa;people&#xa;"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

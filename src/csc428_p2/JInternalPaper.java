@@ -39,6 +39,7 @@ public class JInternalPaper extends javax.swing.JInternalFrame {
 
         jScrollPane1.setViewportView(jEditorPane1);
 
+        jTextPane1.setText("HCI Project 1: The Dangers of Happiness\nThis is a paper detailing the dangers of happiness. Happiness bad. Let's get rid of it.\nSources:\npeople\n");
         jScrollPane2.setViewportView(jTextPane1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
