@@ -11,6 +11,9 @@ package csc428_p2;
  */
 public class JInternalPPT extends javax.swing.JInternalFrame {
 
+    private int slideCurrent;
+    private int slideCount;
+    
     /**
      * Creates new form pptFrame
      */
@@ -27,26 +30,82 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lCurrentSlide = new javax.swing.JLabel();
+        bNewSlide = new javax.swing.JButton();
+        txtChangeSlide = new javax.swing.JTextField();
+        bChangeSlide = new javax.swing.JButton();
+
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
 
+        lCurrentSlide.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lCurrentSlide.setText("Slide 1");
+
+        bNewSlide.setText("New Slide");
+        bNewSlide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bNewSlideActionPerformed(evt);
+            }
+        });
+
+        bChangeSlide.setText("Change Slide");
+        bChangeSlide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bChangeSlideActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1317, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lCurrentSlide)
+                .addGap(18, 18, 18)
+                .addComponent(bNewSlide)
+                .addGap(18, 18, 18)
+                .addComponent(txtChangeSlide, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bChangeSlide)
+                .addContainerGap(301, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 686, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lCurrentSlide)
+                    .addComponent(bNewSlide)
+                    .addComponent(txtChangeSlide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bChangeSlide))
+                .addContainerGap(397, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bNewSlideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNewSlideActionPerformed
+        slideCount++;
+        slideCurrent = slideCount;
+        lCurrentSlide.setText("Slide " + slideCurrent);
+    }//GEN-LAST:event_bNewSlideActionPerformed
+
+    private void bChangeSlideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bChangeSlideActionPerformed
+        int value = Integer.parseInt(txtChangeSlide.getText());
+        if(value <= slideCount){
+            slideCurrent = value;
+            lCurrentSlide.setText("Slide " + slideCurrent);
+        }
+    }//GEN-LAST:event_bChangeSlideActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bChangeSlide;
+    private javax.swing.JButton bNewSlide;
+    private javax.swing.JLabel lCurrentSlide;
+    private javax.swing.JTextField txtChangeSlide;
     // End of variables declaration//GEN-END:variables
 }
