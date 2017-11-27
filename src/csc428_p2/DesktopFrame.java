@@ -163,6 +163,7 @@ public class DesktopFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         JInternalFolder folder = new JInternalFolder();
         jDesktopPane1.add(folder);
+        folder.show();
         
     }//GEN-LAST:event_folderButtonActionPerformed
 

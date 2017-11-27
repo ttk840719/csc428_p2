@@ -9,12 +9,12 @@ package csc428_p2;
  *
  * @author nope
  */
-public class NewJInternalFolder extends javax.swing.JInternalFrame {
+public class JInternalFolder extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form NewJInternalFolder
      */
-    public NewJInternalFolder() {
+    public JInternalFolder() {
         initComponents();
     }
 
@@ -31,11 +31,11 @@ public class NewJInternalFolder extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 667, Short.MAX_VALUE)
+            .addGap(0, 668, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 413, Short.MAX_VALUE)
+            .addGap(0, 449, Short.MAX_VALUE)
         );
 
         pack();
