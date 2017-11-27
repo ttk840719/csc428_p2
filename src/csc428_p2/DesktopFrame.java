@@ -161,9 +161,9 @@ public class DesktopFrame extends javax.swing.JFrame {
 
     private void folderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folderButtonActionPerformed
         // TODO add your handling code here:
-        JInternalPaper folder = new JInternalPaper();
+        JInternalFolder folder = new JInternalFolder();
         jDesktopPane1.add(folder);
-        folder.show();
+        
     }//GEN-LAST:event_folderButtonActionPerformed
 
     /**
