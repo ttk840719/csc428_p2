@@ -14,6 +14,9 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
     private int slideCurrent;
     private int slideCount;
     private String[] imageMapping;
+    private boolean recording;
+    private String[] recordedActions;
+    private int recordingIndex;
     
     /**
      * Creates new form pptFrame
@@ -23,6 +26,17 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         imageMapping = new String[20];
         slideCount = 1;
         slideCurrent = 1;
+        recording = false;
+        recordedActions = new String[20];
+        recordingIndex = 0;
+    }
+    
+    public void resetRecordedActions() {
+        int i = 0;
+        while (i <= recordingIndex) {
+            recordedActions[i] = "";
+            i++;
+        }
     }
     
     public void setContentsVisible(){
@@ -33,6 +47,22 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
     public void mapImageToSlide(String image){ 
         lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/" + image + ".png")));
         imageMapping[slideCurrent] = image;
+        
+        if (recording) {
+            recordedActions[recordingIndex] = "I";
+            recordingIndex++;
+        }
+    }
+    
+    public void applyRecordedActions(String[] selections) {
+        int i = 0;
+        while (i < 3) {
+            if (!(selections[i] == null || selections[i].equals(""))) {
+                slideCount++;
+                imageMapping[slideCount] = selections[i];
+            }
+            i++;
+        }
     }
     
     /**
@@ -169,6 +199,11 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
 
         btnRecord.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnRecord.setText("R");
+        btnRecord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRecordActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -196,6 +231,11 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
             slideCurrent = slideCount;
             lblCurrentSlide.setText("Slide " + slideCurrent);
             lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/blank.png")));
+            
+            if (recording) {
+                recordedActions[recordingIndex] = "N";
+                recordingIndex++;
+            }
         }
     }//GEN-LAST:event_btnNewSlideActionPerformed
 
@@ -222,6 +262,35 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         ii.show();
         
     }//GEN-LAST:event_btnInsertImageActionPerformed
+
+    private void btnRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecordActionPerformed
+        boolean insertedImage = false;
+        boolean newSlide = false;
+        int i = 0;
+        recording = !recording;
+        if (!recording) {
+            btnRecord.setText("R");
+            while(!(recordedActions[i] == null || recordedActions[i].equals(""))){
+                if (recordedActions[i].equals("N")){
+                    newSlide = true;
+                } else if (recordedActions[i].equals("I")){
+                    insertedImage = true;
+                }
+                i++;
+            }
+            
+            if (newSlide && insertedImage) {
+                JApplyRecording ar = new JApplyRecording(this);
+                pnlMain.add(ar);
+                pnlCanvas.setVisible(false);
+                pnlPPT.setVisible(false);
+                ar.show();
+            }
+            
+        } else {
+            btnRecord.setText("■");
+        }
+    }//GEN-LAST:event_btnRecordActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
