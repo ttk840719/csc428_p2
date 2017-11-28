@@ -13,14 +13,26 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
 
     private int slideCurrent;
     private int slideCount;
+    private String[] imageMapping;
     
     /**
      * Creates new form pptFrame
      */
     public JInternalPPT() {
         initComponents();
+        imageMapping = new String[20];
     }
-
+    
+    public void setContentsVisible(){
+        pnlCanvas.setVisible(true);
+        pnlPPT.setVisible(true);
+    }
+    
+    public void mapImageToSlide(String image){ 
+        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/" + image + ".png")));
+        imageMapping[slideCurrent] = image;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,82 +42,182 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lCurrentSlide = new javax.swing.JLabel();
-        bNewSlide = new javax.swing.JButton();
+        jDialog1 = new javax.swing.JDialog();
+        pnlMain = new javax.swing.JPanel();
+        pnlPPT = new javax.swing.JPanel();
+        lblCurrentSlide = new javax.swing.JLabel();
+        btnNewSlide = new javax.swing.JButton();
         txtChangeSlide = new javax.swing.JTextField();
-        bChangeSlide = new javax.swing.JButton();
+        btnChangeSlide = new javax.swing.JButton();
+        pnlCanvas = new javax.swing.JPanel();
+        lblImage = new javax.swing.JLabel();
+        btnInsertImage = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
 
-        lCurrentSlide.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lCurrentSlide.setText("Slide 1");
+        lblCurrentSlide.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblCurrentSlide.setText("Slide 1");
 
-        bNewSlide.setText("New Slide");
-        bNewSlide.addActionListener(new java.awt.event.ActionListener() {
+        btnNewSlide.setText("New Slide");
+        btnNewSlide.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bNewSlideActionPerformed(evt);
+                btnNewSlideActionPerformed(evt);
             }
         });
 
-        bChangeSlide.setText("Change Slide");
-        bChangeSlide.addActionListener(new java.awt.event.ActionListener() {
+        btnChangeSlide.setText("Change Slide");
+        btnChangeSlide.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bChangeSlideActionPerformed(evt);
+                btnChangeSlideActionPerformed(evt);
             }
         });
+
+        pnlCanvas.setBackground(new java.awt.Color(255, 255, 255));
+        pnlCanvas.setMaximumSize(new java.awt.Dimension(504, 321));
+
+        javax.swing.GroupLayout pnlCanvasLayout = new javax.swing.GroupLayout(pnlCanvas);
+        pnlCanvas.setLayout(pnlCanvasLayout);
+        pnlCanvasLayout.setHorizontalGroup(
+            pnlCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCanvasLayout.createSequentialGroup()
+                .addContainerGap(147, Short.MAX_VALUE)
+                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+        );
+        pnlCanvasLayout.setVerticalGroup(
+            pnlCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCanvasLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+
+        btnInsertImage.setText("Insert Image");
+        btnInsertImage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertImageActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlPPTLayout = new javax.swing.GroupLayout(pnlPPT);
+        pnlPPT.setLayout(pnlPPTLayout);
+        pnlPPTLayout.setHorizontalGroup(
+            pnlPPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPPTLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lblCurrentSlide)
+                .addGap(18, 18, 18)
+                .addGroup(pnlPPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPPTLayout.createSequentialGroup()
+                        .addComponent(btnNewSlide)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnChangeSlide)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtChangeSlide, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnInsertImage))
+                    .addGroup(pnlPPTLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(pnlCanvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+        pnlPPTLayout.setVerticalGroup(
+            pnlPPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPPTLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlPPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCurrentSlide)
+                    .addComponent(btnNewSlide)
+                    .addComponent(btnChangeSlide)
+                    .addComponent(btnInsertImage)
+                    .addComponent(txtChangeSlide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(pnlCanvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout pnlMainLayout = new javax.swing.GroupLayout(pnlMain);
+        pnlMain.setLayout(pnlMainLayout);
+        pnlMainLayout.setHorizontalGroup(
+            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlPPT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlMainLayout.setVerticalGroup(
+            pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMainLayout.createSequentialGroup()
+                .addComponent(pnlPPT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 69, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lCurrentSlide)
-                .addGap(18, 18, 18)
-                .addComponent(bNewSlide)
-                .addGap(18, 18, 18)
-                .addComponent(txtChangeSlide, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(bChangeSlide)
-                .addContainerGap(301, Short.MAX_VALUE))
+            .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lCurrentSlide)
-                    .addComponent(bNewSlide)
-                    .addComponent(txtChangeSlide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bChangeSlide))
-                .addContainerGap(397, Short.MAX_VALUE))
+            .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bNewSlideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNewSlideActionPerformed
+    private void btnNewSlideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewSlideActionPerformed
         slideCount++;
         slideCurrent = slideCount;
-        lCurrentSlide.setText("Slide " + slideCurrent);
-    }//GEN-LAST:event_bNewSlideActionPerformed
+        lblCurrentSlide.setText("Slide " + slideCurrent);
+    }//GEN-LAST:event_btnNewSlideActionPerformed
 
-    private void bChangeSlideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bChangeSlideActionPerformed
+    private void btnChangeSlideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeSlideActionPerformed
         int value = Integer.parseInt(txtChangeSlide.getText());
-        if(value <= slideCount){
+        if(value <= slideCount && value > 0){
             slideCurrent = value;
-            lCurrentSlide.setText("Slide " + slideCurrent);
+            lblCurrentSlide.setText("Slide " + slideCurrent);
         }
-    }//GEN-LAST:event_bChangeSlideActionPerformed
+        String image = imageMapping[slideCurrent];
+        if(!(image == null || image.equals(""))){
+            lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/" + image + ".png")));
+        } else {
+            lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/blank.png")));
+        }
+    }//GEN-LAST:event_btnChangeSlideActionPerformed
+
+    private void btnInsertImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertImageActionPerformed
+
+        JInsertImage ii = new JInsertImage(this);
+        pnlMain.add(ii);
+        pnlCanvas.setVisible(false);
+        pnlPPT.setVisible(false);
+        ii.show();
+        
+    }//GEN-LAST:event_btnInsertImageActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bChangeSlide;
-    private javax.swing.JButton bNewSlide;
-    private javax.swing.JLabel lCurrentSlide;
+    private javax.swing.JButton btnChangeSlide;
+    private javax.swing.JButton btnInsertImage;
+    private javax.swing.JButton btnNewSlide;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JLabel lblCurrentSlide;
+    private javax.swing.JLabel lblImage;
+    private javax.swing.JPanel pnlCanvas;
+    private javax.swing.JPanel pnlMain;
+    private javax.swing.JPanel pnlPPT;
     private javax.swing.JTextField txtChangeSlide;
     // End of variables declaration//GEN-END:variables
 }
