@@ -21,6 +21,8 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
     public JInternalPPT() {
         initComponents();
         imageMapping = new String[20];
+        slideCount = 1;
+        slideCurrent = 1;
     }
     
     public void setContentsVisible(){
@@ -52,6 +54,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         pnlCanvas = new javax.swing.JPanel();
         lblImage = new javax.swing.JLabel();
         btnInsertImage = new javax.swing.JButton();
+        btnRecord = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -94,16 +97,16 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         pnlCanvasLayout.setHorizontalGroup(
             pnlCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCanvasLayout.createSequentialGroup()
-                .addContainerGap(147, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addGap(68, 68, 68))
         );
         pnlCanvasLayout.setVerticalGroup(
             pnlCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCanvasLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(73, 73, 73)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         btnInsertImage.setText("Insert Image");
@@ -119,21 +122,20 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
             pnlPPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPPTLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(lblCurrentSlide)
-                .addGap(18, 18, 18)
                 .addGroup(pnlPPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlPPTLayout.createSequentialGroup()
+                        .addComponent(lblCurrentSlide)
+                        .addGap(18, 18, 18)
                         .addComponent(btnNewSlide)
                         .addGap(18, 18, 18)
                         .addComponent(btnChangeSlide)
                         .addGap(18, 18, 18)
                         .addComponent(txtChangeSlide, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnInsertImage))
-                    .addGroup(pnlPPTLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(pnlCanvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                        .addComponent(btnInsertImage)
+                        .addGap(0, 145, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         pnlPPTLayout.setVerticalGroup(
             pnlPPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,8 +147,8 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
                     .addComponent(btnChangeSlide)
                     .addComponent(btnInsertImage)
                     .addComponent(txtChangeSlide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(pnlCanvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pnlCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -154,33 +156,47 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         pnlMain.setLayout(pnlMainLayout);
         pnlMainLayout.setHorizontalGroup(
             pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPPT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlMainLayout.createSequentialGroup()
+                .addComponent(pnlPPT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 40, Short.MAX_VALUE))
         );
         pnlMainLayout.setVerticalGroup(
             pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMainLayout.createSequentialGroup()
                 .addComponent(pnlPPT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 69, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
+
+        btnRecord.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnRecord.setText("R");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnRecord))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnRecord))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNewSlideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewSlideActionPerformed
-        slideCount++;
-        slideCurrent = slideCount;
-        lblCurrentSlide.setText("Slide " + slideCurrent);
+        if (slideCount < 20) {
+            slideCount++;
+            slideCurrent = slideCount;
+            lblCurrentSlide.setText("Slide " + slideCurrent);
+            lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/blank.png")));
+        }
     }//GEN-LAST:event_btnNewSlideActionPerformed
 
     private void btnChangeSlideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeSlideActionPerformed
@@ -212,6 +228,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnChangeSlide;
     private javax.swing.JButton btnInsertImage;
     private javax.swing.JButton btnNewSlide;
+    private javax.swing.JButton btnRecord;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel lblCurrentSlide;
     private javax.swing.JLabel lblImage;
