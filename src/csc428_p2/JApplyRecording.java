@@ -12,12 +12,23 @@ package csc428_p2;
 public class JApplyRecording extends javax.swing.JInternalFrame {
 
     private JInternalPPT parent;
+    private int order;
+    private int slidesAdded;
+    private String[] selections;
     
     /**
      * Creates new form JApplyRecording
+     * @param parent - the parent frame
+     * @param order - determines whether the insertion or adding the slide came
+     *      first; 1 if it was image insertion and 2 if it was adding the slide
+     * @param slidesAdded - the number of frames added
+     * 
      */
-    public JApplyRecording(JInternalPPT parent) {
+    public JApplyRecording(JInternalPPT parent, int order, int slidesAdded) {
         this.parent = parent;
+        this.order = order;
+        this.slidesAdded = slidesAdded;
+        selections = new String[3];
         initComponents();
     }
 
@@ -48,6 +59,24 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         lblApplyDog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/dog_thumbnail.png"))); // NOI18N
 
         lblApplyBird.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/bird_thumbnail.png"))); // NOI18N
+
+        chkbxApplyCat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkbxApplyCatActionPerformed(evt);
+            }
+        });
+
+        chkbxApplyDog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkbxApplyDogActionPerformed(evt);
+            }
+        });
+
+        chkbxApplyBird.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkbxApplyBirdActionPerformed(evt);
+            }
+        });
 
         btnApply.setText("Apply");
         btnApply.addActionListener(new java.awt.event.ActionListener() {
@@ -129,26 +158,73 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApplyActionPerformed
-        int i = 0;
-        String[] selections = new String[3];
-        if (chkbxApplyCat.isSelected()){
-            selections[i] = "cat";
-            i++;
-        }
-        
-        if (chkbxApplyDog.isSelected()){
-            selections[i] = "dog";
-            i++;
-        }
-        
-        if (chkbxApplyBird.isSelected()){
-            selections[i] = "bird";
-            i++;
-        }
-        parent.applyRecordedActions(selections);
+        parent.applyRecordedActions(selections, order, slidesAdded);
         parent.setContentsVisible();
         this.dispose();
     }//GEN-LAST:event_btnApplyActionPerformed
+
+    private void chkbxApplyCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbxApplyCatActionPerformed
+        if (chkbxApplyCat.isSelected()) {
+            int i = 0;
+            while (i < 3) {
+                if (selections[i] == null || selections[i].equals("")) {
+                    selections[i] = "cat";
+                    return;
+                }
+                i++;
+            }
+        } else {
+            if (selections[0].equals("cat")) {
+                selections[0] = selections[1];
+                selections[1] = selections[2];
+            } else if (selections[1].equals("cat")) {
+                selections[1] = selections[2];
+            }
+            selections[2] = "";
+        }
+    }//GEN-LAST:event_chkbxApplyCatActionPerformed
+
+    private void chkbxApplyDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbxApplyDogActionPerformed
+        if (chkbxApplyDog.isSelected()) {
+            int i = 0;
+            while (i < 3) {
+                if (selections[i] == null || selections[i].equals("")) {
+                    selections[i] = "dog";
+                    return;
+                }
+                i++;
+            }
+        } else {
+            if (selections[0].equals("dog")) {
+                selections[0] = selections[1];
+                selections[1] = selections[2];
+            } else if (selections[1].equals("dog")) {
+                selections[1] = selections[2];
+            }
+            selections[2] = "";
+        }
+    }//GEN-LAST:event_chkbxApplyDogActionPerformed
+
+    private void chkbxApplyBirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbxApplyBirdActionPerformed
+        if (chkbxApplyBird.isSelected()) {
+            int i = 0;
+            while (i < 3) {
+                if (selections[i] == null || selections[i].equals("")) {
+                    selections[i] = "bird";
+                    return;
+                }
+                i++;
+            }
+        } else {
+            if (selections[0].equals("bird")) {
+                selections[0] = selections[1];
+                selections[1] = selections[2];
+            } else if (selections[1].equals("bird")) {
+                selections[1] = selections[2];
+            }
+            selections[2] = "";
+        }
+    }//GEN-LAST:event_chkbxApplyBirdActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -117,10 +117,19 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="chkbxApplyCat">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkbxApplyCatActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="chkbxApplyDog">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkbxApplyDogActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="chkbxApplyBird">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkbxApplyBirdActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnApply">
       <Properties>

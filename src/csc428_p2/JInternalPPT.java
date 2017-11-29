@@ -42,6 +42,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
     public void setContentsVisible(){
         pnlCanvas.setVisible(true);
         pnlPPT.setVisible(true);
+        btnRecord.setVisible(true);
     }
     
     public void mapImageToSlide(String image){ 
@@ -54,14 +55,32 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         }
     }
     
-    public void applyRecordedActions(String[] selections) {
+    public void applyRecordedActions(String[] selections, int order, int slidesAdded) {
         int i = 0;
         while (i < 3) {
             if (!(selections[i] == null || selections[i].equals(""))) {
-                slideCount++;
-                imageMapping[slideCount] = selections[i];
+                int j = 0;
+                if (order == 1){
+                    imageMapping[slideCount] = selections[i];
+                    while (j < slidesAdded) {
+                        slideCount++;
+                        j++;
+                    }
+                } else if (order == 2){
+                    while (j < slidesAdded) {
+                        slideCount++;
+                        j++;
+                    }
+                    imageMapping[slideCount] = selections[i];
+                }
             }
             i++;
+        }
+        String image = imageMapping[slideCurrent];
+        if(!(image == null || image.equals(""))){
+            lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/" + image + ".png")));
+        } else {
+            lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/blank.png")));
         }
     }
     
@@ -127,7 +146,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         pnlCanvasLayout.setHorizontalGroup(
             pnlCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCanvasLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(214, Short.MAX_VALUE)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
         );
@@ -153,7 +172,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
             .addGroup(pnlPPTLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(pnlPPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlCanvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlPPTLayout.createSequentialGroup()
                         .addComponent(lblCurrentSlide)
                         .addGap(18, 18, 18)
@@ -163,9 +182,8 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addComponent(txtChangeSlide, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnInsertImage)
-                        .addGap(0, 145, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(btnInsertImage)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlPPTLayout.setVerticalGroup(
             pnlPPTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,13 +206,13 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
             pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMainLayout.createSequentialGroup()
                 .addComponent(pnlPPT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 40, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlMainLayout.setVerticalGroup(
             pnlMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMainLayout.createSequentialGroup()
                 .addComponent(pnlPPT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         btnRecord.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -259,6 +277,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         pnlMain.add(ii);
         pnlCanvas.setVisible(false);
         pnlPPT.setVisible(false);
+        btnRecord.setVisible(false);
         ii.show();
         
     }//GEN-LAST:event_btnInsertImageActionPerformed
@@ -266,6 +285,8 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
     private void btnRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecordActionPerformed
         boolean insertedImage = false;
         boolean newSlide = false;
+        int order = 0;
+        int slidesAdded = 0;
         int i = 0;
         recording = !recording;
         if (!recording) {
@@ -273,17 +294,25 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
             while(!(recordedActions[i] == null || recordedActions[i].equals(""))){
                 if (recordedActions[i].equals("N")){
                     newSlide = true;
+                    slidesAdded++;
+                    if (order == 0){
+                        order = 2;
+                    }
                 } else if (recordedActions[i].equals("I")){
                     insertedImage = true;
+                    if (order == 0){
+                        order = 1;
+                    }
                 }
                 i++;
             }
             
             if (newSlide && insertedImage) {
-                JApplyRecording ar = new JApplyRecording(this);
+                JApplyRecording ar = new JApplyRecording(this, order, slidesAdded);
                 pnlMain.add(ar);
                 pnlCanvas.setVisible(false);
                 pnlPPT.setVisible(false);
+                btnRecord.setVisible(false);
                 ar.show();
             }
             
