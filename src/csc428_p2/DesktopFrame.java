@@ -149,23 +149,14 @@ public class DesktopFrame extends javax.swing.JFrame {
 
     private void noteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noteButtonActionPerformed
         // TODO add your handling code here:
-        JInternalNote note = new JInternalNote();
-        jDesktopPane1.add(note);
-        note.show();
     }//GEN-LAST:event_noteButtonActionPerformed
 
     private void paperButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paperButtonActionPerformed
         // TODO add your handling code here:
-        JInternalPaper paper = new JInternalPaper();
-        jDesktopPane1.add(paper);
-        paper.show();
     }//GEN-LAST:event_paperButtonActionPerformed
 
     private void folderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folderButtonActionPerformed
         // TODO add your handling code here:
-        JInternalFolder folder = new JInternalFolder();
-        jDesktopPane1.add(folder);
-        folder.show();
         
     }//GEN-LAST:event_folderButtonActionPerformed
 
