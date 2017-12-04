@@ -37,6 +37,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
             recordedActions[i] = "";
             i++;
         }
+        recordingIndex = 0;
     }
     
     public void setContentsVisible(){
@@ -82,6 +83,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         } else {
             lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/blank.png")));
         }
+        resetRecordedActions();
     }
     
     /**
@@ -282,6 +284,14 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_btnInsertImageActionPerformed
 
+    public void showApplyAction(JApplyRecording ar){
+        pnlMain.add(ar);
+        pnlCanvas.setVisible(false);
+        pnlPPT.setVisible(false);
+        btnRecord.setVisible(false);
+        ar.show();
+    }
+    
     private void btnRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecordActionPerformed
         boolean insertedImage = false;
         boolean newSlide = false;
@@ -308,12 +318,12 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
             }
             
             if (newSlide && insertedImage) {
-                JApplyRecording ar = new JApplyRecording(this, order, slidesAdded);
-                pnlMain.add(ar);
+                JActionLog al = new JActionLog(this, order, slidesAdded);
+                pnlMain.add(al);
                 pnlCanvas.setVisible(false);
                 pnlPPT.setVisible(false);
                 btnRecord.setVisible(false);
-                ar.show();
+                al.show();
             }
             
         } else {
