@@ -295,7 +295,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
 
     private void btnInsertImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertImageActionPerformed
 
-        JInsertImage ii = new JInsertImage(this);
+        JInsertingImage ii = new JInsertingImage(this);
         pnlMain.add(ii);
         pnlCanvas.setVisible(false);
         pnlPPT.setVisible(false);
