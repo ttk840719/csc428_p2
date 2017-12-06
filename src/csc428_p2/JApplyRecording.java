@@ -51,6 +51,8 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         btnApply = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
 
+        setResizable(true);
+
         lblConfirmImages.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblConfirmImages.setText("Select images to apply recording:");
 
@@ -118,7 +120,7 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(40, 40, 40)
                                     .addComponent(lblConfirmImages))))
-                        .addGap(0, 45, Short.MAX_VALUE))
+                        .addGap(0, 344, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnCancel)
@@ -141,7 +143,7 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
                     .addComponent(chkbxApplyCat)
                     .addComponent(chkbxApplyDog)
                     .addComponent(chkbxApplyBird))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnApply)
                     .addComponent(btnCancel))

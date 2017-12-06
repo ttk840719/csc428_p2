@@ -48,9 +48,10 @@ public class JActionLog extends javax.swing.JInternalFrame {
         lblActionLog2 = new javax.swing.JLabel();
         lblActionLog1 = new javax.swing.JLabel();
 
-        lblActionLogTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblActionLogTitle.setFont(new java.awt.Font("Tahoma", 1, 40)); // NOI18N
         lblActionLogTitle.setText("Actions identified:");
 
+        btnConfirmActions.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         btnConfirmActions.setText("Confirm");
         btnConfirmActions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +59,7 @@ public class JActionLog extends javax.swing.JInternalFrame {
             }
         });
 
+        btnCancelActionLog.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         btnCancelActionLog.setText("Cancel");
         btnCancelActionLog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,10 +67,10 @@ public class JActionLog extends javax.swing.JInternalFrame {
             }
         });
 
-        lblActionLog2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblActionLog2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblActionLog2.setText("action2");
 
-        lblActionLog1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblActionLog1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblActionLog1.setText("action1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -78,28 +80,32 @@ public class JActionLog extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(496, Short.MAX_VALUE)
                         .addComponent(btnCancelActionLog)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnConfirmActions))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblActionLog1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblActionLogTitle)
-                            .addComponent(lblActionLog2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 19, Short.MAX_VALUE)))
+                        .addComponent(lblActionLogTitle)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblActionLog1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblActionLog2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(lblActionLogTitle)
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblActionLog1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblActionLog2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirmActions)
                     .addComponent(btnCancelActionLog))
