@@ -6,6 +6,7 @@
 package csc428_p2;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -319,7 +320,7 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         pnlApplyLayout.setHorizontalGroup(
             pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyLayout.createSequentialGroup()
-                .addContainerGap(360, Short.MAX_VALUE)
+                .addContainerGap(437, Short.MAX_VALUE)
                 .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnCancel)
                     .addGroup(pnlApplyLayout.createSequentialGroup()
@@ -340,7 +341,7 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
                 .addComponent(btnApply)
                 .addContainerGap())
             .addGroup(pnlApplyLayout.createSequentialGroup()
-                .addGap(223, 223, 223)
+                .addGap(245, 245, 245)
                 .addComponent(lblConfirmImages)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -352,9 +353,9 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         pnlApplyLayout.setVerticalGroup(
             pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyLayout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
+                .addGap(71, 71, 71)
                 .addComponent(lblConfirmImages)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyLayout.createSequentialGroup()
                         .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,18 +396,35 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Cancels the apply recording process and returns to the previous screen
+     * @param evt 
+     */
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         parent.setContentsVisible();
         parent.resetRecordedActions();
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
+    /**
+     * Applies the actions recorded on all of the images selected
+     * @param evt 
+     */
     private void btnApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApplyActionPerformed
-        parent.applyRecordedActions(selections, order, slidesAdded);
-        parent.setContentsVisible();
-        this.dispose();
+        if (!catSelected && !dogSelected && !birdSelected && !rabbitSelected
+                && !fishSelected && !turtleSelected) {
+            JOptionPane.showMessageDialog(this, "Please select at least one picture.");
+        } else {
+            parent.applyRecordedActions2(selections);
+            parent.setContentsVisible();
+            this.dispose();
+        }
     }//GEN-LAST:event_btnApplyActionPerformed
 
+    /**
+     * Selects the cat image and adds it at the end of the queue
+     * @param evt 
+     */
     private void btnSelectCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectCatActionPerformed
         catSelected = !catSelected;
         if (catSelected) {
@@ -432,6 +450,10 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectCatActionPerformed
 
+    /**
+     * Selects the dog image and adds it at the end of the queue
+     * @param evt 
+     */
     private void btnSelectDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectDogActionPerformed
         dogSelected = !dogSelected;
         if (dogSelected) {
@@ -457,6 +479,10 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectDogActionPerformed
 
+    /**
+     * Selects the bird image and adds it at the end of the queue
+     * @param evt 
+     */
     private void btnInsertBirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertBirdActionPerformed
         birdSelected = !birdSelected;
         if (birdSelected) {
@@ -482,6 +508,10 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnInsertBirdActionPerformed
 
+    /**
+     * Selects the rabbit image and adds it at the end of the queue
+     * @param evt 
+     */
     private void btnSelectRabbitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectRabbitActionPerformed
         rabbitSelected = !rabbitSelected;
         if (rabbitSelected) {
@@ -507,6 +537,10 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectRabbitActionPerformed
 
+    /**
+     * Selects the fish image and adds it at the end of the queue
+     * @param evt 
+     */
     private void btnSelectFishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectFishActionPerformed
         fishSelected = !fishSelected;
         if (fishSelected) {
@@ -532,6 +566,10 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectFishActionPerformed
 
+    /**
+     * Selects the turtle image and adds it at the end of the queue
+     * @param evt 
+     */
     private void btnSelectTurtleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectTurtleActionPerformed
         turtleSelected = !turtleSelected;
         if (turtleSelected) {
