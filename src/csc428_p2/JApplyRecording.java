@@ -6,7 +6,6 @@
 package csc428_p2;
 
 import java.awt.Color;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -85,9 +84,10 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
 
         pnlApply.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblConfirmImages.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblConfirmImages.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lblConfirmImages.setText("Select images to apply recording:");
 
+        btnApply.setFont(new java.awt.Font("Tahoma", 0, 39)); // NOI18N
         btnApply.setText("Apply");
         btnApply.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +95,7 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
             }
         });
 
+        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 39)); // NOI18N
         btnCancel.setText("Cancel");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,6 +112,7 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
             }
         });
 
+        lblCatTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblCatTitle.setText("cat.jpg");
 
         javax.swing.GroupLayout pnlApplyCatLayout = new javax.swing.GroupLayout(pnlApplyCat);
@@ -118,14 +120,11 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         pnlApplyCatLayout.setHorizontalGroup(
             pnlApplyCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlApplyCatLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnlApplyCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlApplyCatLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSelectCat, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlApplyCatLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(lblCatTitle)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSelectCat, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCatTitle))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         pnlApplyCatLayout.setVerticalGroup(
             pnlApplyCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,6 +147,7 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
             }
         });
 
+        lblDogTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblDogTitle.setText("dog.jpg");
 
         javax.swing.GroupLayout pnlApplyDogLayout = new javax.swing.GroupLayout(pnlApplyDog);
@@ -155,14 +155,13 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         pnlApplyDogLayout.setHorizontalGroup(
             pnlApplyDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlApplyDogLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnlApplyDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDogTitle)
                     .addGroup(pnlApplyDogLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSelectDog, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlApplyDogLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(lblDogTitle)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(10, 10, 10)
+                        .addComponent(btnSelectDog, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         pnlApplyDogLayout.setVerticalGroup(
             pnlApplyDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,6 +182,7 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
             }
         });
 
+        lblBirdTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblBirdTitle.setText("bird.jpg");
 
         javax.swing.GroupLayout pnlApplyBirdLayout = new javax.swing.GroupLayout(pnlApplyBird);
@@ -218,6 +218,7 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
             }
         });
 
+        lblRabbitTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblRabbitTitle.setText("rabbit.jpg");
 
         javax.swing.GroupLayout pnlApplyRabbitLayout = new javax.swing.GroupLayout(pnlApplyRabbit);
@@ -225,14 +226,13 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         pnlApplyRabbitLayout.setHorizontalGroup(
             pnlApplyRabbitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlApplyRabbitLayout.createSequentialGroup()
-                .addGroup(pnlApplyRabbitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlApplyRabbitLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(lblRabbitTitle))
-                    .addGroup(pnlApplyRabbitLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSelectRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(34, 34, 34)
+                .addComponent(lblRabbitTitle)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyRabbitLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSelectRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
         );
         pnlApplyRabbitLayout.setVerticalGroup(
             pnlApplyRabbitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,28 +253,28 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
             }
         });
 
+        lblFishTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblFishTitle.setText("fish.jpg");
 
         javax.swing.GroupLayout pnlApplyFishLayout = new javax.swing.GroupLayout(pnlApplyFish);
         pnlApplyFish.setLayout(pnlApplyFishLayout);
         pnlApplyFishLayout.setHorizontalGroup(
             pnlApplyFishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlApplyFishLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyFishLayout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addGroup(pnlApplyFishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlApplyFishLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSelectFish, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlApplyFishLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(lblFishTitle)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblFishTitle)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyFishLayout.createSequentialGroup()
+                        .addComponent(btnSelectFish, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)))
+                .addContainerGap())
         );
         pnlApplyFishLayout.setVerticalGroup(
             pnlApplyFishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlApplyFishLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(40, 40, 40)
                 .addComponent(btnSelectFish, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblFishTitle)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -288,6 +288,7 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
             }
         });
 
+        lblTurtleTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblTurtleTitle.setText("turtle.jpg");
 
         javax.swing.GroupLayout pnlApplyTurtleLayout = new javax.swing.GroupLayout(pnlApplyTurtle);
@@ -295,14 +296,13 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         pnlApplyTurtleLayout.setHorizontalGroup(
             pnlApplyTurtleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlApplyTurtleLayout.createSequentialGroup()
-                .addGroup(pnlApplyTurtleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlApplyTurtleLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSelectTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlApplyTurtleLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(lblTurtleTitle)))
+                .addGap(36, 36, 36)
+                .addComponent(lblTurtleTitle)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyTurtleLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSelectTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
         pnlApplyTurtleLayout.setVerticalGroup(
             pnlApplyTurtleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -319,36 +319,57 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         pnlApplyLayout.setHorizontalGroup(
             pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyLayout.createSequentialGroup()
-                .addContainerGap(508, Short.MAX_VALUE)
-                .addComponent(btnCancel)
+                .addContainerGap(360, Short.MAX_VALUE)
+                .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnCancel)
+                    .addGroup(pnlApplyLayout.createSequentialGroup()
+                        .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(pnlApplyRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnlApplyCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(79, 79, 79)
+                        .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyLayout.createSequentialGroup()
+                                .addComponent(pnlApplyDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(65, 65, 65)
+                                .addComponent(pnlApplyBird, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyLayout.createSequentialGroup()
+                                .addComponent(pnlApplyFish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(58, 58, 58)
+                                .addComponent(pnlApplyTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnApply)
                 .addContainerGap())
+            .addGroup(pnlApplyLayout.createSequentialGroup()
+                .addGap(223, 223, 223)
+                .addComponent(lblConfirmImages)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlApplyLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(lblSidebar)
-                    .addGap(40, 40, 40)
-                    .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblConfirmImages)
-                        .addGroup(pnlApplyLayout.createSequentialGroup()
-                            .addComponent(pnlApplyRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(pnlApplyFish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(pnlApplyTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pnlApplyLayout.createSequentialGroup()
-                            .addComponent(pnlApplyCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(pnlApplyDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(pnlApplyBird, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(40, Short.MAX_VALUE)))
+                    .addContainerGap(1083, Short.MAX_VALUE)))
         );
         pnlApplyLayout.setVerticalGroup(
             pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyLayout.createSequentialGroup()
-                .addContainerGap(366, Short.MAX_VALUE)
+                .addContainerGap(65, Short.MAX_VALUE)
+                .addComponent(lblConfirmImages)
+                .addGap(18, 18, 18)
+                .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyLayout.createSequentialGroup()
+                        .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pnlApplyBird, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnlApplyDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnlApplyCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlApplyLayout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(pnlApplyTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlApplyLayout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(pnlApplyRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(pnlApplyFish, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(111, 111, 111)
                 .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancel)
                     .addComponent(btnApply))
@@ -356,66 +377,36 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
             .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlApplyLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lblSidebar)
-                        .addGroup(pnlApplyLayout.createSequentialGroup()
-                            .addComponent(lblConfirmImages)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(pnlApplyDog, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pnlApplyCat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pnlApplyBird, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(pnlApplyFish, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pnlApplyRabbit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pnlApplyTurtle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addContainerGap(32, Short.MAX_VALUE)))
+                    .addComponent(lblSidebar)
+                    .addContainerGap(436, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlApply, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlApply, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlApply, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlApply, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * Cancels the apply recording process and returns to the previous screen
-     * @param evt 
-     */
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         parent.setContentsVisible();
         parent.resetRecordedActions();
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
-    /**
-     * Applies the actions recorded on all of the images selected
-     * @param evt 
-     */
     private void btnApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApplyActionPerformed
-        if (!catSelected && !dogSelected && !birdSelected && !rabbitSelected
-                && !fishSelected && !turtleSelected) {
-            JOptionPane.showMessageDialog(this, "Please select at least one picture.");
-        } else {
-            parent.applyRecordedActions2(selections);
-            parent.setContentsVisible();
-            this.dispose();
-        }
+        parent.applyRecordedActions(selections, order, slidesAdded);
+        parent.setContentsVisible();
+        this.dispose();
     }//GEN-LAST:event_btnApplyActionPerformed
 
-    /**
-     * Selects the cat image and adds it at the end of the queue
-     * @param evt 
-     */
     private void btnSelectCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectCatActionPerformed
         catSelected = !catSelected;
         if (catSelected) {
@@ -441,10 +432,6 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectCatActionPerformed
 
-    /**
-     * Selects the dog image and adds it at the end of the queue
-     * @param evt 
-     */
     private void btnSelectDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectDogActionPerformed
         dogSelected = !dogSelected;
         if (dogSelected) {
@@ -470,10 +457,6 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectDogActionPerformed
 
-    /**
-     * Selects the bird image and adds it at the end of the queue
-     * @param evt 
-     */
     private void btnInsertBirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertBirdActionPerformed
         birdSelected = !birdSelected;
         if (birdSelected) {
@@ -499,10 +482,6 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnInsertBirdActionPerformed
 
-    /**
-     * Selects the rabbit image and adds it at the end of the queue
-     * @param evt 
-     */
     private void btnSelectRabbitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectRabbitActionPerformed
         rabbitSelected = !rabbitSelected;
         if (rabbitSelected) {
@@ -528,10 +507,6 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectRabbitActionPerformed
 
-    /**
-     * Selects the fish image and adds it at the end of the queue
-     * @param evt 
-     */
     private void btnSelectFishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectFishActionPerformed
         fishSelected = !fishSelected;
         if (fishSelected) {
@@ -557,10 +532,6 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectFishActionPerformed
 
-    /**
-     * Selects the turtle image and adds it at the end of the queue
-     * @param evt 
-     */
     private void btnSelectTurtleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectTurtleActionPerformed
         turtleSelected = !turtleSelected;
         if (turtleSelected) {

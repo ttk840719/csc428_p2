@@ -71,6 +71,7 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
 
         pnlInsert.setBackground(new java.awt.Color(255, 255, 255));
 
+        btnInsert.setFont(new java.awt.Font("Tahoma", 0, 39)); // NOI18N
         btnInsert.setText("Confirm");
         btnInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +79,7 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
             }
         });
 
+        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 39)); // NOI18N
         btnCancel.setText("Cancel");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,6 +96,7 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
             }
         });
 
+        lblCatTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblCatTitle.setText("cat.jpg");
 
         javax.swing.GroupLayout pnlInsertCatLayout = new javax.swing.GroupLayout(pnlInsertCat);
@@ -101,13 +104,10 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         pnlInsertCatLayout.setHorizontalGroup(
             pnlInsertCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInsertCatLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
                 .addGroup(pnlInsertCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlInsertCatLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(lblCatTitle))
-                    .addGroup(pnlInsertCatLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSelectCat, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnSelectCat, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCatTitle))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlInsertCatLayout.setVerticalGroup(
@@ -129,6 +129,7 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
             }
         });
 
+        lblDogTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblDogTitle.setText("dog.jpg");
 
         javax.swing.GroupLayout pnlInsertDogLayout = new javax.swing.GroupLayout(pnlInsertDog);
@@ -136,13 +137,10 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         pnlInsertDogLayout.setHorizontalGroup(
             pnlInsertDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInsertDogLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
                 .addGroup(pnlInsertDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlInsertDogLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSelectDog, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlInsertDogLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(lblDogTitle)))
+                    .addComponent(btnSelectDog, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDogTitle))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlInsertDogLayout.setVerticalGroup(
@@ -164,6 +162,7 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
             }
         });
 
+        lblBirdTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblBirdTitle.setText("bird.jpg");
 
         javax.swing.GroupLayout pnlInsertBirdLayout = new javax.swing.GroupLayout(pnlInsertBird);
@@ -171,13 +170,10 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         pnlInsertBirdLayout.setHorizontalGroup(
             pnlInsertBirdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInsertBirdLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
                 .addGroup(pnlInsertBirdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlInsertBirdLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnInsertBird, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlInsertBirdLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(lblBirdTitle)))
+                    .addComponent(btnInsertBird, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblBirdTitle))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlInsertBirdLayout.setVerticalGroup(
@@ -199,6 +195,7 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
             }
         });
 
+        lblRabbitTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblRabbitTitle.setText("rabbit.jpg");
 
         javax.swing.GroupLayout pnlInsertRabbitLayout = new javax.swing.GroupLayout(pnlInsertRabbit);
@@ -206,19 +203,18 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         pnlInsertRabbitLayout.setHorizontalGroup(
             pnlInsertRabbitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInsertRabbitLayout.createSequentialGroup()
-                .addGroup(pnlInsertRabbitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlInsertRabbitLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(lblRabbitTitle))
-                    .addGroup(pnlInsertRabbitLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSelectRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(34, 34, 34)
+                .addComponent(lblRabbitTitle)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInsertRabbitLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSelectRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55))
         );
         pnlInsertRabbitLayout.setVerticalGroup(
             pnlInsertRabbitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInsertRabbitLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(48, 48, 48)
                 .addComponent(btnSelectRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblRabbitTitle)
@@ -234,6 +230,7 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
             }
         });
 
+        lblFishTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblFishTitle.setText("fish.jpg");
 
         javax.swing.GroupLayout pnlInsertFishLayout = new javax.swing.GroupLayout(pnlInsertFish);
@@ -241,14 +238,11 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         pnlInsertFishLayout.setHorizontalGroup(
             pnlInsertFishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInsertFishLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnlInsertFishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlInsertFishLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSelectFish, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlInsertFishLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(lblFishTitle)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSelectFish, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFishTitle))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         pnlInsertFishLayout.setVerticalGroup(
             pnlInsertFishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,6 +263,7 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
             }
         });
 
+        lblTurtleTitle.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblTurtleTitle.setText("turtle.jpg");
 
         javax.swing.GroupLayout pnlInsertTurtleLayout = new javax.swing.GroupLayout(pnlInsertTurtle);
@@ -276,14 +271,13 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         pnlInsertTurtleLayout.setHorizontalGroup(
             pnlInsertTurtleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInsertTurtleLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnlInsertTurtleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTurtleTitle)
                     .addGroup(pnlInsertTurtleLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnSelectTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlInsertTurtleLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(lblTurtleTitle)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(14, 14, 14)
+                        .addComponent(btnSelectTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         pnlInsertTurtleLayout.setVerticalGroup(
             pnlInsertTurtleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,7 +286,7 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
                 .addComponent(btnSelectTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTurtleTitle)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlInsertLayout = new javax.swing.GroupLayout(pnlInsert);
@@ -300,24 +294,22 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         pnlInsertLayout.setHorizontalGroup(
             pnlInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInsertLayout.createSequentialGroup()
-                .addGroup(pnlInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(237, Short.MAX_VALUE)
+                .addGroup(pnlInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(pnlInsertLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(pnlInsertCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInsertLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(pnlInsertRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(pnlInsertRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnlInsertFish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlInsertLayout.createSequentialGroup()
+                        .addComponent(pnlInsertCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151)
                         .addComponent(pnlInsertDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pnlInsertBird, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlInsertLayout.createSequentialGroup()
-                        .addComponent(pnlInsertFish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pnlInsertTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addGap(13, 13, 13)))
+                .addGap(102, 102, 102)
+                .addGroup(pnlInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlInsertTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlInsertBird, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(126, 126, 126))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInsertLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnInsert)
@@ -328,18 +320,22 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         pnlInsertLayout.setVerticalGroup(
             pnlInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInsertLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnlInsertBird, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlInsertDog, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlInsertCat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(42, 42, 42)
+                .addGap(121, 121, 121)
                 .addGroup(pnlInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlInsertRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(pnlInsertTurtle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pnlInsertFish, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                    .addComponent(pnlInsertDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlInsertBird, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlInsertCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlInsertLayout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(pnlInsertTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlInsertLayout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(pnlInsertFish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlInsertLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(pnlInsertRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addGroup(pnlInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancel)
                     .addComponent(btnInsert))
@@ -368,10 +364,6 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * Button even that checks which picture was selected and then sends it back
-     * @param evt 
-     */
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
         if (catSelected) {
             parent.mapImageToSlide("cat");
@@ -390,20 +382,11 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_btnInsertActionPerformed
 
-    /**
-     * Button that cancels the Insert Image screen and returns to the previous
-     * page
-     * @param evt 
-     */
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         parent.setContentsVisible();
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
-    /**
-     * Selects the cat image and de-selects all others
-     * @param evt 
-     */
     private void btnSelectCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectCatActionPerformed
         catSelected = !catSelected;
         if (catSelected) {
@@ -423,10 +406,6 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectCatActionPerformed
 
-    /**
-     * Selects the dog image and de-selects all others
-     * @param evt 
-     */
     private void btnSelectDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectDogActionPerformed
         dogSelected = !dogSelected;
         if (dogSelected) {
@@ -446,10 +425,6 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectDogActionPerformed
 
-    /**
-     * Selects the bird image and de-selects all others
-     * @param evt 
-     */
     private void btnInsertBirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertBirdActionPerformed
         birdSelected = !birdSelected;
         if (birdSelected) {
@@ -469,10 +444,6 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnInsertBirdActionPerformed
 
-    /**
-     * Selects the rabbit image and de-selects all others
-     * @param evt 
-     */
     private void btnSelectRabbitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectRabbitActionPerformed
         rabbitSelected = !rabbitSelected;
         if (rabbitSelected) {
@@ -492,10 +463,6 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectRabbitActionPerformed
 
-    /**
-     * Selects the fish image and de-selects all others
-     * @param evt 
-     */
     private void btnSelectFishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectFishActionPerformed
         fishSelected = !fishSelected;
         if (fishSelected) {
@@ -515,10 +482,6 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectFishActionPerformed
 
-    /**
-     * Selects the turtle image and de-selects all others
-     * @param evt 
-     */
     private void btnSelectTurtleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectTurtleActionPerformed
         turtleSelected = !turtleSelected;
         if (turtleSelected) {

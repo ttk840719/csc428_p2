@@ -14,92 +14,23 @@ public class JActionLog extends javax.swing.JInternalFrame {
     private JInternalPPT parent;
     private int order;
     private int slidesAdded;
-    private String[] recordedActions;
     
     /**
      * Creates new form JActionLog
      */
-    public JActionLog(JInternalPPT parent, int order, int slidesAdded, String[] recordedActions) {
+    public JActionLog(JInternalPPT parent, int order, int slidesAdded) {
         initComponents();
         this.parent = parent;
         this.order = order;
         this.slidesAdded = slidesAdded;
         
-        int i = 0;
-        boolean addingSlides = false;
-        int slidesAdding = 0;
-        int index = 1;
-        while(!(recordedActions[i] == null || recordedActions[i].equals(""))){
-            if (recordedActions[i].equals("N")) {
-                if (addingSlides) {
-                    index--;
-                    slidesAdding++;
-                    if (index == 1) {
-                        lblActionLog1.setText("New slide (x" + slidesAdding + ")");
-                    } else if (index == 2) {
-                        lblActionLog2.setText("New slide (x" + slidesAdding + ")");
-                    } else if (index == 3) {
-                        lblActionLog3.setText("New slide (x" + slidesAdding + ")");
-                    } else if (index == 4) {
-                        lblActionLog4.setText("New slide (x" + slidesAdding + ")");
-                    } else if (index == 5) {
-                        lblActionLog5.setText("New slide (x" + slidesAdding + ")");
-                    }
-                    index++;
-                } else {
-                    slidesAdding++;
-                    if (index == 1) {
-                        lblActionLog1.setText("New slide (x" + slidesAdding + ")");
-                    } else if (index == 2) {
-                        lblActionLog2.setText("New slide (x" + slidesAdding + ")");
-                    } else if (index == 3) {
-                        lblActionLog3.setText("New slide (x" + slidesAdding + ")");
-                    } else if (index == 4) {
-                        lblActionLog4.setText("New slide (x" + slidesAdding + ")");
-                    } else if (index == 5) {
-                        lblActionLog5.setText("New slide (x" + slidesAdding + ")");
-                    }
-                    addingSlides = true;
-                    index++;
-                }
-            } else if (recordedActions[i].equals("I")) {
-                slidesAdding = 0;
-                addingSlides = false;
-                if (index == 1) {
-                    lblActionLog1.setText("Image inserted");
-                } else if (index == 2) {
-                    lblActionLog2.setText("Image inserted");
-                } else if (index == 3) {
-                    lblActionLog3.setText("Image inserted");
-                } else if (index == 4) {
-                    lblActionLog4.setText("Image inserted");
-                } else if (index == 5) {
-                    lblActionLog5.setText("Image inserted");
-                }
-                index++;
-            }
-            i++;
+        if (order == 1) {
+            lblActionLog1.setText("Image inserted");
+            lblActionLog2.setText("New slide (x" + slidesAdded + ")");
+        } else {
+            lblActionLog1.setText("New slide (x" + slidesAdded + ")");
+            lblActionLog2.setText("Image inserted");
         }
-        
-        if (index <= 6) {
-            clearActionLabels(index);
-        } else if (index > 6) {
-            lblActionLog6.setText("+ " + (index - 6) + " more action(s)...");
-        } 
-    }
-    
-    public void clearActionLabels(int index) {
-        if (index == 3) {
-            lblActionLog3.setText("");
-            lblActionLog4.setText("");
-            lblActionLog5.setText("");
-        } else if (index == 4) {
-            lblActionLog4.setText("");
-            lblActionLog5.setText("");
-        } else if (index == 5) {
-            lblActionLog5.setText("");
-        }
-        lblActionLog6.setText("");
     }
 
     /**
@@ -116,10 +47,6 @@ public class JActionLog extends javax.swing.JInternalFrame {
         btnCancelActionLog = new javax.swing.JButton();
         lblActionLog2 = new javax.swing.JLabel();
         lblActionLog1 = new javax.swing.JLabel();
-        lblActionLog3 = new javax.swing.JLabel();
-        lblActionLog4 = new javax.swing.JLabel();
-        lblActionLog5 = new javax.swing.JLabel();
-        lblActionLog6 = new javax.swing.JLabel();
 
         lblActionLogTitle.setFont(new java.awt.Font("Tahoma", 1, 40)); // NOI18N
         lblActionLogTitle.setText("Actions identified:");
@@ -146,69 +73,35 @@ public class JActionLog extends javax.swing.JInternalFrame {
         lblActionLog1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lblActionLog1.setText("action1");
 
-        lblActionLog3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        lblActionLog3.setText("action3");
-
-        lblActionLog4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        lblActionLog4.setText("action4");
-
-        lblActionLog5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        lblActionLog5.setText("action5");
-
-        lblActionLog6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        lblActionLog6.setText("action6");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(lblActionLogTitle))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblActionLog1, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 486, Short.MAX_VALUE)
-                                .addComponent(btnCancelActionLog)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnConfirmActions))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblActionLog2, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
-                                    .addComponent(lblActionLog3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblActionLog4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblActionLog5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(lblActionLog6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(496, Short.MAX_VALUE)
+                .addComponent(btnCancelActionLog)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnConfirmActions)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(lblActionLog2, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblActionLog1, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblActionLogTitle))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(64, 64, 64)
                 .addComponent(lblActionLogTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(38, 38, 38)
                 .addComponent(lblActionLog1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblActionLog2)
-                .addGap(18, 18, 18)
-                .addComponent(lblActionLog3)
-                .addGap(18, 18, 18)
-                .addComponent(lblActionLog4)
-                .addGap(18, 18, 18)
-                .addComponent(lblActionLog5)
-                .addGap(18, 18, 18)
-                .addComponent(lblActionLog6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirmActions)
                     .addComponent(btnCancelActionLog))
@@ -218,20 +111,12 @@ public class JActionLog extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * Confirms the actions and moves to the image selection screen
-     * @param evt 
-     */
     private void btnConfirmActionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionsActionPerformed
         JApplyRecording ar = new JApplyRecording(parent, order, slidesAdded);
         parent.showApplyAction(ar);
         this.dispose();
     }//GEN-LAST:event_btnConfirmActionsActionPerformed
 
-    /**
-     * Cancels the recording applying process and returns to previous page
-     * @param evt 
-     */
     private void btnCancelActionLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionLogActionPerformed
         parent.setContentsVisible();
         parent.resetRecordedActions();
@@ -244,10 +129,6 @@ public class JActionLog extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnConfirmActions;
     private javax.swing.JLabel lblActionLog1;
     private javax.swing.JLabel lblActionLog2;
-    private javax.swing.JLabel lblActionLog3;
-    private javax.swing.JLabel lblActionLog4;
-    private javax.swing.JLabel lblActionLog5;
-    private javax.swing.JLabel lblActionLog6;
     private javax.swing.JLabel lblActionLogTitle;
     // End of variables declaration//GEN-END:variables
 }
