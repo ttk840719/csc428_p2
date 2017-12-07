@@ -58,7 +58,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
     
     public void applyRecordedActions(String[] selections, int order, int slidesAdded) {
         int i = 0;
-        while (i < 3) {
+        while (i < 6) {
             if (!(selections[i] == null || selections[i].equals(""))) {
                 int j = 0;
                 if (order == 1){

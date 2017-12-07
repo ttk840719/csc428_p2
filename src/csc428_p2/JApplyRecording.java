@@ -5,6 +5,8 @@
  */
 package csc428_p2;
 
+import java.awt.Color;
+
 /**
  *
  * @author Ignacio
@@ -15,6 +17,12 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
     private int order;
     private int slidesAdded;
     private String[] selections;
+    private boolean catSelected;
+    private boolean dogSelected;
+    private boolean birdSelected;
+    private boolean rabbitSelected;
+    private boolean fishSelected;
+    private boolean turtleSelected;
     
     /**
      * Creates new form JApplyRecording
@@ -28,7 +36,13 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         this.parent = parent;
         this.order = order;
         this.slidesAdded = slidesAdded;
-        selections = new String[3];
+        selections = new String[6];
+        catSelected = false;
+        dogSelected = false;
+        birdSelected = false;
+        rabbitSelected = false;
+        fishSelected = false;
+        turtleSelected = false;
         initComponents();
     }
 
@@ -41,44 +55,37 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlApply = new javax.swing.JPanel();
         lblConfirmImages = new javax.swing.JLabel();
-        lblApplyCat = new javax.swing.JLabel();
-        lblApplyDog = new javax.swing.JLabel();
-        lblApplyBird = new javax.swing.JLabel();
-        chkbxApplyCat = new javax.swing.JCheckBox();
-        chkbxApplyDog = new javax.swing.JCheckBox();
-        chkbxApplyBird = new javax.swing.JCheckBox();
         btnApply = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
+        pnlApplyCat = new javax.swing.JPanel();
+        btnSelectCat = new javax.swing.JButton();
+        lblCatTitle = new javax.swing.JLabel();
+        lblSidebar = new javax.swing.JLabel();
+        pnlApplyDog = new javax.swing.JPanel();
+        btnSelectDog = new javax.swing.JButton();
+        lblDogTitle = new javax.swing.JLabel();
+        pnlApplyBird = new javax.swing.JPanel();
+        btnInsertBird = new javax.swing.JButton();
+        lblBirdTitle = new javax.swing.JLabel();
+        pnlApplyRabbit = new javax.swing.JPanel();
+        btnSelectRabbit = new javax.swing.JButton();
+        lblRabbitTitle = new javax.swing.JLabel();
+        pnlApplyFish = new javax.swing.JPanel();
+        btnSelectFish = new javax.swing.JButton();
+        lblFishTitle = new javax.swing.JLabel();
+        pnlApplyTurtle = new javax.swing.JPanel();
+        btnSelectTurtle = new javax.swing.JButton();
+        lblTurtleTitle = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setResizable(true);
+
+        pnlApply.setBackground(new java.awt.Color(255, 255, 255));
 
         lblConfirmImages.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblConfirmImages.setText("Select images to apply recording:");
-
-        lblApplyCat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/cat_thumbnail.png"))); // NOI18N
-
-        lblApplyDog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/dog_thumbnail.png"))); // NOI18N
-
-        lblApplyBird.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/bird_thumbnail.png"))); // NOI18N
-
-        chkbxApplyCat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkbxApplyCatActionPerformed(evt);
-            }
-        });
-
-        chkbxApplyDog.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkbxApplyDogActionPerformed(evt);
-            }
-        });
-
-        chkbxApplyBird.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chkbxApplyBirdActionPerformed(evt);
-            }
-        });
 
         btnApply.setText("Apply");
         btnApply.addActionListener(new java.awt.event.ActionListener() {
@@ -94,60 +101,286 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
             }
         });
 
+        pnlApplyCat.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnSelectCat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/cat_thumbnail.png"))); // NOI18N
+        btnSelectCat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelectCatActionPerformed(evt);
+            }
+        });
+
+        lblCatTitle.setText("cat.jpg");
+
+        javax.swing.GroupLayout pnlApplyCatLayout = new javax.swing.GroupLayout(pnlApplyCat);
+        pnlApplyCat.setLayout(pnlApplyCatLayout);
+        pnlApplyCatLayout.setHorizontalGroup(
+            pnlApplyCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyCatLayout.createSequentialGroup()
+                .addGroup(pnlApplyCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlApplyCatLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSelectCat, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlApplyCatLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(lblCatTitle)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlApplyCatLayout.setVerticalGroup(
+            pnlApplyCatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyCatLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnSelectCat, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblCatTitle)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        lblSidebar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/InsertSidebar.png"))); // NOI18N
+
+        pnlApplyDog.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnSelectDog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/dog_thumbnail.png"))); // NOI18N
+        btnSelectDog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelectDogActionPerformed(evt);
+            }
+        });
+
+        lblDogTitle.setText("dog.jpg");
+
+        javax.swing.GroupLayout pnlApplyDogLayout = new javax.swing.GroupLayout(pnlApplyDog);
+        pnlApplyDog.setLayout(pnlApplyDogLayout);
+        pnlApplyDogLayout.setHorizontalGroup(
+            pnlApplyDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyDogLayout.createSequentialGroup()
+                .addGroup(pnlApplyDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlApplyDogLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSelectDog, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlApplyDogLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(lblDogTitle)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlApplyDogLayout.setVerticalGroup(
+            pnlApplyDogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyDogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnSelectDog, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDogTitle)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnlApplyBird.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnInsertBird.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/bird_thumbnail.png"))); // NOI18N
+        btnInsertBird.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertBirdActionPerformed(evt);
+            }
+        });
+
+        lblBirdTitle.setText("bird.jpg");
+
+        javax.swing.GroupLayout pnlApplyBirdLayout = new javax.swing.GroupLayout(pnlApplyBird);
+        pnlApplyBird.setLayout(pnlApplyBirdLayout);
+        pnlApplyBirdLayout.setHorizontalGroup(
+            pnlApplyBirdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyBirdLayout.createSequentialGroup()
+                .addGroup(pnlApplyBirdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlApplyBirdLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnInsertBird, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlApplyBirdLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(lblBirdTitle)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlApplyBirdLayout.setVerticalGroup(
+            pnlApplyBirdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyBirdLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnInsertBird, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblBirdTitle)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnlApplyRabbit.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnSelectRabbit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/rabbit_thumbnail.png"))); // NOI18N
+        btnSelectRabbit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelectRabbitActionPerformed(evt);
+            }
+        });
+
+        lblRabbitTitle.setText("rabbit.jpg");
+
+        javax.swing.GroupLayout pnlApplyRabbitLayout = new javax.swing.GroupLayout(pnlApplyRabbit);
+        pnlApplyRabbit.setLayout(pnlApplyRabbitLayout);
+        pnlApplyRabbitLayout.setHorizontalGroup(
+            pnlApplyRabbitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyRabbitLayout.createSequentialGroup()
+                .addGroup(pnlApplyRabbitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlApplyRabbitLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(lblRabbitTitle))
+                    .addGroup(pnlApplyRabbitLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSelectRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlApplyRabbitLayout.setVerticalGroup(
+            pnlApplyRabbitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyRabbitLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnSelectRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblRabbitTitle)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnlApplyFish.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnSelectFish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/fish_thumbnail.png"))); // NOI18N
+        btnSelectFish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelectFishActionPerformed(evt);
+            }
+        });
+
+        lblFishTitle.setText("fish.jpg");
+
+        javax.swing.GroupLayout pnlApplyFishLayout = new javax.swing.GroupLayout(pnlApplyFish);
+        pnlApplyFish.setLayout(pnlApplyFishLayout);
+        pnlApplyFishLayout.setHorizontalGroup(
+            pnlApplyFishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyFishLayout.createSequentialGroup()
+                .addGroup(pnlApplyFishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlApplyFishLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSelectFish, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlApplyFishLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(lblFishTitle)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlApplyFishLayout.setVerticalGroup(
+            pnlApplyFishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyFishLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnSelectFish, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblFishTitle)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pnlApplyTurtle.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnSelectTurtle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/turtle_thumbnail.png"))); // NOI18N
+        btnSelectTurtle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSelectTurtleActionPerformed(evt);
+            }
+        });
+
+        lblTurtleTitle.setText("turtle.jpg");
+
+        javax.swing.GroupLayout pnlApplyTurtleLayout = new javax.swing.GroupLayout(pnlApplyTurtle);
+        pnlApplyTurtle.setLayout(pnlApplyTurtleLayout);
+        pnlApplyTurtleLayout.setHorizontalGroup(
+            pnlApplyTurtleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyTurtleLayout.createSequentialGroup()
+                .addGroup(pnlApplyTurtleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlApplyTurtleLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSelectTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlApplyTurtleLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(lblTurtleTitle)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlApplyTurtleLayout.setVerticalGroup(
+            pnlApplyTurtleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlApplyTurtleLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnSelectTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTurtleTitle)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlApplyLayout = new javax.swing.GroupLayout(pnlApply);
+        pnlApply.setLayout(pnlApplyLayout);
+        pnlApplyLayout.setHorizontalGroup(
+            pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyLayout.createSequentialGroup()
+                .addContainerGap(508, Short.MAX_VALUE)
+                .addComponent(btnCancel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnApply)
+                .addContainerGap())
+            .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlApplyLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lblSidebar)
+                    .addGap(40, 40, 40)
+                    .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblConfirmImages)
+                        .addGroup(pnlApplyLayout.createSequentialGroup()
+                            .addComponent(pnlApplyRabbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(pnlApplyFish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(pnlApplyTurtle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlApplyLayout.createSequentialGroup()
+                            .addComponent(pnlApplyCat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(pnlApplyDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(pnlApplyBird, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(40, Short.MAX_VALUE)))
+        );
+        pnlApplyLayout.setVerticalGroup(
+            pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlApplyLayout.createSequentialGroup()
+                .addContainerGap(366, Short.MAX_VALUE)
+                .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancel)
+                    .addComponent(btnApply))
+                .addContainerGap())
+            .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlApplyLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblSidebar)
+                        .addGroup(pnlApplyLayout.createSequentialGroup()
+                            .addComponent(lblConfirmImages)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(pnlApplyDog, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pnlApplyCat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pnlApplyBird, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(pnlApplyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(pnlApplyFish, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pnlApplyRabbit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pnlApplyTurtle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addContainerGap(32, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(56, 56, 56)
-                                .addComponent(lblApplyCat)
-                                .addGap(35, 35, 35)
-                                .addComponent(lblApplyDog)
-                                .addGap(34, 34, 34)
-                                .addComponent(lblApplyBird))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGap(100, 100, 100)
-                                    .addComponent(chkbxApplyCat)
-                                    .addGap(114, 114, 114)
-                                    .addComponent(chkbxApplyDog)
-                                    .addGap(109, 109, 109)
-                                    .addComponent(chkbxApplyBird))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(40, 40, 40)
-                                    .addComponent(lblConfirmImages))))
-                        .addGap(0, 344, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnCancel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnApply)))
-                .addContainerGap())
+            .addComponent(pnlApply, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblConfirmImages)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblApplyCat)
-                    .addComponent(lblApplyDog)
-                    .addComponent(lblApplyBird))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chkbxApplyCat)
-                    .addComponent(chkbxApplyDog)
-                    .addComponent(chkbxApplyBird))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnApply)
-                    .addComponent(btnCancel))
-                .addContainerGap())
+            .addComponent(pnlApply, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -165,10 +398,12 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_btnApplyActionPerformed
 
-    private void chkbxApplyCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbxApplyCatActionPerformed
-        if (chkbxApplyCat.isSelected()) {
+    private void btnSelectCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectCatActionPerformed
+        catSelected = !catSelected;
+        if (catSelected) {
+            pnlApplyCat.setBackground(Color.LIGHT_GRAY);
             int i = 0;
-            while (i < 3) {
+            while (i < 6) {
                 if (selections[i] == null || selections[i].equals("")) {
                     selections[i] = "cat";
                     return;
@@ -176,20 +411,24 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
                 i++;
             }
         } else {
+            pnlApplyCat.setBackground(Color.WHITE);
             if (selections[0].equals("cat")) {
                 selections[0] = selections[1];
                 selections[1] = selections[2];
-            } else if (selections[1].equals("cat")) {
-                selections[1] = selections[2];
+                selections[2] = selections[3];
+                selections[3] = selections[4];
+                selections[4] = selections[5];
             }
-            selections[2] = "";
+            selections[5] = "";
         }
-    }//GEN-LAST:event_chkbxApplyCatActionPerformed
+    }//GEN-LAST:event_btnSelectCatActionPerformed
 
-    private void chkbxApplyDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbxApplyDogActionPerformed
-        if (chkbxApplyDog.isSelected()) {
+    private void btnSelectDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectDogActionPerformed
+        dogSelected = !dogSelected;
+        if (dogSelected) {
+            pnlApplyDog.setBackground(Color.LIGHT_GRAY);
             int i = 0;
-            while (i < 3) {
+            while (i < 6) {
                 if (selections[i] == null || selections[i].equals("")) {
                     selections[i] = "dog";
                     return;
@@ -197,20 +436,24 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
                 i++;
             }
         } else {
+            pnlApplyDog.setBackground(Color.WHITE);
             if (selections[0].equals("dog")) {
                 selections[0] = selections[1];
                 selections[1] = selections[2];
-            } else if (selections[1].equals("dog")) {
-                selections[1] = selections[2];
+                selections[2] = selections[3];
+                selections[3] = selections[4];
+                selections[4] = selections[5];
             }
-            selections[2] = "";
+            selections[5] = "";
         }
-    }//GEN-LAST:event_chkbxApplyDogActionPerformed
+    }//GEN-LAST:event_btnSelectDogActionPerformed
 
-    private void chkbxApplyBirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkbxApplyBirdActionPerformed
-        if (chkbxApplyBird.isSelected()) {
+    private void btnInsertBirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertBirdActionPerformed
+        birdSelected = !birdSelected;
+        if (birdSelected) {
+            pnlApplyBird.setBackground(Color.LIGHT_GRAY);
             int i = 0;
-            while (i < 3) {
+            while (i < 6) {
                 if (selections[i] == null || selections[i].equals("")) {
                     selections[i] = "bird";
                     return;
@@ -218,26 +461,117 @@ public class JApplyRecording extends javax.swing.JInternalFrame {
                 i++;
             }
         } else {
+            pnlApplyBird.setBackground(Color.WHITE);
             if (selections[0].equals("bird")) {
                 selections[0] = selections[1];
                 selections[1] = selections[2];
-            } else if (selections[1].equals("bird")) {
-                selections[1] = selections[2];
+                selections[2] = selections[3];
+                selections[3] = selections[4];
+                selections[4] = selections[5];
             }
-            selections[2] = "";
+            selections[5] = "";
         }
-    }//GEN-LAST:event_chkbxApplyBirdActionPerformed
+    }//GEN-LAST:event_btnInsertBirdActionPerformed
+
+    private void btnSelectRabbitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectRabbitActionPerformed
+        rabbitSelected = !rabbitSelected;
+        if (rabbitSelected) {
+            pnlApplyRabbit.setBackground(Color.LIGHT_GRAY);
+            int i = 0;
+            while (i < 6) {
+                if (selections[i] == null || selections[i].equals("")) {
+                    selections[i] = "rabbit";
+                    return;
+                }
+                i++;
+            }
+        } else {
+            pnlApplyRabbit.setBackground(Color.WHITE);
+            if (selections[0].equals("rabbit")) {
+                selections[0] = selections[1];
+                selections[1] = selections[2];
+                selections[2] = selections[3];
+                selections[3] = selections[4];
+                selections[4] = selections[5];
+            }
+            selections[5] = "";
+        }
+    }//GEN-LAST:event_btnSelectRabbitActionPerformed
+
+    private void btnSelectFishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectFishActionPerformed
+        fishSelected = !fishSelected;
+        if (fishSelected) {
+            pnlApplyFish.setBackground(Color.LIGHT_GRAY);
+            int i = 0;
+            while (i < 6) {
+                if (selections[i] == null || selections[i].equals("")) {
+                    selections[i] = "fish";
+                    return;
+                }
+                i++;
+            }
+        } else {
+            pnlApplyFish.setBackground(Color.WHITE);
+            if (selections[0].equals("fish")) {
+                selections[0] = selections[1];
+                selections[1] = selections[2];
+                selections[2] = selections[3];
+                selections[3] = selections[4];
+                selections[4] = selections[5];
+            }
+            selections[5] = "";
+        }
+    }//GEN-LAST:event_btnSelectFishActionPerformed
+
+    private void btnSelectTurtleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectTurtleActionPerformed
+        turtleSelected = !turtleSelected;
+        if (turtleSelected) {
+            pnlApplyTurtle.setBackground(Color.LIGHT_GRAY);
+            int i = 0;
+            while (i < 6) {
+                if (selections[i] == null || selections[i].equals("")) {
+                    selections[i] = "turtle";
+                    return;
+                }
+                i++;
+            }
+        } else {
+            pnlApplyTurtle.setBackground(Color.WHITE);
+            if (selections[0].equals("turtle")) {
+                selections[0] = selections[1];
+                selections[1] = selections[2];
+                selections[2] = selections[3];
+                selections[3] = selections[4];
+                selections[4] = selections[5];
+            }
+            selections[5] = "";
+        }
+    }//GEN-LAST:event_btnSelectTurtleActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnApply;
     private javax.swing.JButton btnCancel;
-    private javax.swing.JCheckBox chkbxApplyBird;
-    private javax.swing.JCheckBox chkbxApplyCat;
-    private javax.swing.JCheckBox chkbxApplyDog;
-    private javax.swing.JLabel lblApplyBird;
-    private javax.swing.JLabel lblApplyCat;
-    private javax.swing.JLabel lblApplyDog;
+    private javax.swing.JButton btnInsertBird;
+    private javax.swing.JButton btnSelectCat;
+    private javax.swing.JButton btnSelectDog;
+    private javax.swing.JButton btnSelectFish;
+    private javax.swing.JButton btnSelectRabbit;
+    private javax.swing.JButton btnSelectTurtle;
+    private javax.swing.JLabel lblBirdTitle;
+    private javax.swing.JLabel lblCatTitle;
     private javax.swing.JLabel lblConfirmImages;
+    private javax.swing.JLabel lblDogTitle;
+    private javax.swing.JLabel lblFishTitle;
+    private javax.swing.JLabel lblRabbitTitle;
+    private javax.swing.JLabel lblSidebar;
+    private javax.swing.JLabel lblTurtleTitle;
+    private javax.swing.JPanel pnlApply;
+    private javax.swing.JPanel pnlApplyBird;
+    private javax.swing.JPanel pnlApplyCat;
+    private javax.swing.JPanel pnlApplyDog;
+    private javax.swing.JPanel pnlApplyFish;
+    private javax.swing.JPanel pnlApplyRabbit;
+    private javax.swing.JPanel pnlApplyTurtle;
     // End of variables declaration//GEN-END:variables
 }
