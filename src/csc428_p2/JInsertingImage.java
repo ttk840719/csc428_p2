@@ -368,6 +368,10 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Button even that checks which picture was selected and then sends it back
+     * @param evt 
+     */
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
         if (catSelected) {
             parent.mapImageToSlide("cat");
@@ -386,11 +390,20 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_btnInsertActionPerformed
 
+    /**
+     * Button that cancels the Insert Image screen and returns to the previous
+     * page
+     * @param evt 
+     */
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         parent.setContentsVisible();
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
 
+    /**
+     * Selects the cat image and de-selects all others
+     * @param evt 
+     */
     private void btnSelectCatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectCatActionPerformed
         catSelected = !catSelected;
         if (catSelected) {
@@ -410,6 +423,10 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectCatActionPerformed
 
+    /**
+     * Selects the dog image and de-selects all others
+     * @param evt 
+     */
     private void btnSelectDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectDogActionPerformed
         dogSelected = !dogSelected;
         if (dogSelected) {
@@ -429,6 +446,10 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectDogActionPerformed
 
+    /**
+     * Selects the bird image and de-selects all others
+     * @param evt 
+     */
     private void btnInsertBirdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertBirdActionPerformed
         birdSelected = !birdSelected;
         if (birdSelected) {
@@ -448,6 +469,10 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnInsertBirdActionPerformed
 
+    /**
+     * Selects the rabbit image and de-selects all others
+     * @param evt 
+     */
     private void btnSelectRabbitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectRabbitActionPerformed
         rabbitSelected = !rabbitSelected;
         if (rabbitSelected) {
@@ -467,6 +492,10 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectRabbitActionPerformed
 
+    /**
+     * Selects the fish image and de-selects all others
+     * @param evt 
+     */
     private void btnSelectFishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectFishActionPerformed
         fishSelected = !fishSelected;
         if (fishSelected) {
@@ -486,6 +515,10 @@ public class JInsertingImage extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnSelectFishActionPerformed
 
+    /**
+     * Selects the turtle image and de-selects all others
+     * @param evt 
+     */
     private void btnSelectTurtleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSelectTurtleActionPerformed
         turtleSelected = !turtleSelected;
         if (turtleSelected) {

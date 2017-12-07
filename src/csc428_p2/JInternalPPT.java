@@ -31,6 +31,9 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         recordingIndex = 0;
     }
     
+    /**
+     * Clears the queue of recorded actions
+     */
     public void resetRecordedActions() {
         int i = 0;
         while (i <= recordingIndex) {
@@ -40,12 +43,19 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         recordingIndex = 0;
     }
     
+    /**
+     * When returning to the screen, makes the screen visible
+     */
     public void setContentsVisible(){
         pnlCanvas.setVisible(true);
         pnlPPT.setVisible(true);
         btnRecord.setVisible(true);
     }
     
+    /**
+     * Assigns an image to a slide
+     * @param image - the string code for the image
+     */
     public void mapImageToSlide(String image){ 
         lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/" + image + ".png")));
         imageMapping[slideCurrent] = image;
@@ -74,6 +84,53 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
                     }
                     imageMapping[slideCount] = selections[i];
                 }
+            }
+            i++;
+        }
+        String image = imageMapping[slideCurrent];
+        if(!(image == null || image.equals(""))){
+            lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/" + image + ".png")));
+        } else {
+            lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/csc428_p2/image/blank.png")));
+        }
+        resetRecordedActions();
+    }
+    
+    public void printEverything(String[] selections, String[] recordedActions){
+        System.out.println("RA");
+        int j = 0;
+        while (!(recordedActions[j] == null || recordedActions[j].equals(""))){
+            System.out.println(recordedActions[j]);
+            j++;
+        }
+        System.out.println("SE");
+        j = 0;
+        while (!(selections[j] == null || selections[j].equals("")) && j < 6) {
+            System.out.println(selections[j]);
+            j++;
+        }
+    }
+    
+    public void applyRecordedActions2(String[] selections) {
+        printEverything(selections, recordedActions);
+        int i = 0;
+        boolean added = false;
+        while (i < 6) {
+            int j = 0;
+            while (!(recordedActions[j] == null || recordedActions[j].equals(""))){
+                if (recordedActions[j].equals("N")) {
+                    if (added && (selections[i] == null || selections[i].equals(""))) {
+                        return;
+                    }
+                    slideCount++;
+                } else if (recordedActions[j].equals("I")) {
+                    added = true;
+                    if ((selections[i] == null || selections[i].equals(""))) {
+                        return;
+                    }
+                    imageMapping[slideCount] = selections[i];
+                }
+                j++;
             }
             i++;
         }
@@ -345,7 +402,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
             }
             
             if (newSlide && insertedImage) {
-                JActionLog al = new JActionLog(this, order, slidesAdded);
+                JActionLog al = new JActionLog(this, order, slidesAdded, recordedActions);
                 pnlMain.add(al);
                 pnlCanvas.setVisible(false);
                 pnlPPT.setVisible(false);
