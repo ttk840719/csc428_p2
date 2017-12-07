@@ -149,16 +149,16 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
         pnlCanvasLayout.setHorizontalGroup(
             pnlCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCanvasLayout.createSequentialGroup()
-                .addContainerGap(866, Short.MAX_VALUE)
+                .addContainerGap(490, Short.MAX_VALUE)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+                .addGap(444, 444, 444))
         );
         pnlCanvasLayout.setVerticalGroup(
             pnlCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCanvasLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(227, 227, 227)
                 .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(408, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
 
         btnInsertImage.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -289,7 +289,7 @@ public class JInternalPPT extends javax.swing.JInternalFrame {
 
     private void btnInsertImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertImageActionPerformed
 
-        JInsertImage ii = new JInsertImage(this);
+        JInsertingImage ii = new JInsertingImage(this);
         pnlMain.add(ii);
         pnlCanvas.setVisible(false);
         pnlPPT.setVisible(false);
